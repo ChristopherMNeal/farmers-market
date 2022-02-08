@@ -271,7 +271,7 @@ const availableProduce = [
 ];
 
 function ProduceList() {
-  // const month = new Date().getUTCMonth();
+  const month = new Date().getUTCMonth();
   return (
     <React.Fragment>
       {availableProduce.map((month, index) => (
