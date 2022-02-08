@@ -1,5 +1,4 @@
 import React from "react";
-import ProduceItem from "./ProduceItem";
 
 const availableProduce = [
   {
@@ -272,35 +271,17 @@ const availableProduce = [
 
 function ProduceList() {
   const month = new Date().getUTCMonth();
+  const thisAvailableProduce = availableProduce[month]; //.selection
   return (
     <React.Fragment>
-      {availableProduce.map((month, index) => (
-        <ProduceItem
-          monthName={month.month}
-          itemArray={month.selection}
-          key={index}
-        />
-      ))}
+      <h3>{thisAvailableProduce.month} Availabilties</h3>
+      <ul>
+        {thisAvailableProduce.selection.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
     </React.Fragment>
   );
 }
 
 export default ProduceList;
-
-// function TicketList() {
-//   return (
-//     <React.Fragment>
-//       <hr />
-//       {mainTicketList.map((ticket, index) => (
-//         <Ticket
-//           names={ticket.names}
-//           location={ticket.location}
-//           issue={ticket.issue}
-//           key={index}
-//         />
-//       ))}
-//     </React.Fragment>
-//   );
-// }
-
-// export default TicketList;
